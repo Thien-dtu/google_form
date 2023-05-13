@@ -25,7 +25,7 @@ function Centeredtabs() {
 
     return (
         <Paper className={classes.root}>
-            <Tabs textColor='primary' indicatorColor='primary' centered className={classes.tab}>
+            <Tabs value={0} textColor='primary' indicatorColor='primary' centered className={classes.tab}>
                 <Tab label="Questions" className={classes.tab}></Tab>
                 <Tab label="Responses" className={classes.tab}></Tab>
             </Tabs>
