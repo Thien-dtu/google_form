@@ -47,6 +47,8 @@ function Questionform() {
     },
   ]);
 
+  const [selectedQuestionType, setSelectedQuestionType] = useState("");
+
   function changeQuestion(text, i) {
     var newQuestion = [...questions];
     newQuestion[i].questionText = text;
@@ -248,6 +250,11 @@ function Questionform() {
                         <div style={{ display: "flex" }}>
                           <FormControlLabel
                             style={{
+                              fontSize: "15px",
+                              fontWeight: "400",
+                              letterSpacing: ".1px",
+                              lineHeight: "24px",
+                              paddingBottom: "8px",
                               marginLeft: "5px",
                               marginBottom: "5px",
                             }}
@@ -309,6 +316,10 @@ function Questionform() {
                           display: "flex",
                           alignItems: "center",
                         }}
+                        value={selectedQuestionType}
+                        onChange={(event) =>
+                          setSelectedQuestionType(event.target.value)
+                        }
                       >
                         <MenuItem
                           className="menuitem"
@@ -506,6 +517,7 @@ function Questionform() {
                           onClick={() => {
                             requiredQuestion(i);
                           }}
+                          checked={ques.required}
                         />
                         {/* </IconButton> */}
                         <IconButton>
